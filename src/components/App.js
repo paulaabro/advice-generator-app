@@ -7,12 +7,7 @@ export default function App() {
   const [advice, setAdvice] = useState(null);
 
   function getAdvice() {
-    const headers = {
-      "Cache-Control": "no-cache",
-      Pragma: "no-cache",
-      Expires: "0",
-    };
-    const promise = axios.get("https://api.adviceslip.com/advice", {headers});
+    const promise = axios.get("https://api.adviceslip.com/advice");
     promise.then(res => setAdvice(res.data.slip));
   }
 
